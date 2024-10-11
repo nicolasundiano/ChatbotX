@@ -1,6 +1,6 @@
 namespace WebApi.WhatsappCloud.Models;
 
-public class WhatsAppCloudRequest
+public class WhatsappCloudRequest
 {
     public List<Entry> Entry { get; set; }
 }

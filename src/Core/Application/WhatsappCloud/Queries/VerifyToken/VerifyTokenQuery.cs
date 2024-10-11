@@ -3,7 +3,7 @@ using Application.WhatsappCloud.Common.Interfaces;
 using Application.WhatsappCloud.Common.Models;
 using MediatR;
 
-namespace Application.WhatsappCloud.Queries;
+namespace Application.WhatsappCloud.Queries.VerifyToken;
 
 public record VerifyTokenQuery(
     string Token,
