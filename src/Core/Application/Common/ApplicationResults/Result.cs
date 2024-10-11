@@ -8,24 +8,28 @@ public readonly record struct Result<TValue> : IResult<TValue>
     public TValue Value => _value!;
     public List<Error> Errors => IsError ? _errors! : new List<Error> { };
     public bool IsError { get; }
+    public bool IsSuccess { get; }
 
 
     private Result(TValue value)
     {
         _value = value;
         IsError = false;
+        IsSuccess = true;
     }
     
     private Result(Error error)
     {
         _errors = new List<Error> { error };
         IsError = true;
+        IsSuccess = false;
     }
     
     private Result(List<Error> errors)
     {
         _errors = errors;
         IsError = true;
+        IsSuccess = false;
     }
     
     public static implicit operator Result<TValue>(TValue value)
