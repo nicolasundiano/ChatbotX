@@ -1,8 +1,9 @@
 using Application.WhatsappCloud.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.WhatsappCloud.Models;
 
-namespace WebApi.Controllers;
+namespace WebApi.WhatsappCloud.Controllers;
 
 [ApiController]
 [Route("api/whatsapp")]
@@ -22,5 +23,19 @@ public class WhatsappCloudController(ISender mediator) : Controller
         }
 
         return BadRequest();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> ReceiveAndSendMessage(WhatsAppCloudRequest request)
+    {
+        try
+        {
+
+            return Ok("EVENT_RECEIVED");
+        }
+        catch (Exception e)
+        {
+            return Ok("EVENT_RECEIVED");
+        }
     }
 }
